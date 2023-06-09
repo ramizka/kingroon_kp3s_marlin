@@ -662,9 +662,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  14.91
-    #define DEFAULT_Ki   1.09
-    #define DEFAULT_Kd 51.00
+    #define DEFAULT_Kp  12.22
+    #define DEFAULT_Ki   0.86
+    #define DEFAULT_Kd  43.51
   #endif
 #endif
 
@@ -1165,7 +1165,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 848 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 789 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1887,8 +1887,8 @@
  */
 #define PREHEAT_BEFORE_LEVELING
 #if ENABLED(PREHEAT_BEFORE_LEVELING)
-  #define LEVELING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
-  #define LEVELING_BED_TEMP     50
+  #define LEVELING_NOZZLE_TEMP 200   // (°C) Only applies to E0 at this time
+  #define LEVELING_BED_TEMP     80
 #endif
 
 /**
@@ -1909,7 +1909,7 @@
 
 #if ANY(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL, PROBE_MANUALLY)
   // Set a height for the start of manual adjustment
-  #define MANUAL_PROBE_START_Z 0.2  // (mm) Comment out to use the last-measured height
+  #define MANUAL_PROBE_START_Z 0.1  // (mm) Comment out to use the last-measured height
 #endif
 
 #if ANY(MESH_BED_LEVELING, AUTO_BED_LEVELING_BILINEAR, AUTO_BED_LEVELING_UBL)
@@ -2019,7 +2019,7 @@
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-//#define LCD_BED_TRAMMING
+#define LCD_BED_TRAMMING
 
 #if ENABLED(LCD_BED_TRAMMING)
   #define BED_TRAMMING_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets
