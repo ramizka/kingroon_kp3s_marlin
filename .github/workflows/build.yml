@@ -33,12 +33,12 @@ jobs:
       run: |
         cd Marlin
         cp ../configs/*.h Marlin/
-        pio run -e mks_robin_nano_v1v2
+        pio run -e mks_robin_nano35
 
     - name: Prepare artifacts
       run: |
-        ls Marlin/.pio/build/mks_robin_nano_v1v2/
-        cp Marlin/.pio/build/mks_robin_nano_v1v2/*.bin ./Robin_nano.bin
+        ls Marlin/.pio/build/mks_robin_nano35/
+        cp Marlin/.pio/build/mks_robin_nano35/*.bin ./Robin_nano.bin
     - uses: actions/upload-artifact@v3
       with:
         name: firmware
